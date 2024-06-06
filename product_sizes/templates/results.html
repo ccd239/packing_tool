@@ -1,0 +1,35 @@
+{% extends "master.html" %}
+
+
+{% block content %}
+<a href="{% url 'product_dimensions' %}" class="btn btn-outline-primary mt-3 mx-3">Go Back</a>
+<div>
+    <div>
+        <h1>How many products we can put in each dimension of the box?</h1>
+
+        <h3>These calculations use the simplest arrangement of the products inside the carton: length with length and width with width.</h3>
+
+        <h4>Results fo the product with the dimensions {{length_product}}x{{width_product}}x{{height_product}} (mm): </h4>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Length ratios</th>
+                        <th scope="col">Width ratios</th>
+                        <th scope="col">Height ratios</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in data %}
+                    <tr>
+                        <td>{{ row.length_ratio }}</td>
+                        <td>{{ row.width_ratio }}</td>
+                        <td>{{ row.height_ratio }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

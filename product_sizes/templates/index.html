@@ -1,0 +1,18 @@
+{% extends "master.html" %}
+
+{% block content %}
+<a href="{% url 'main' %}" class="btn btn-outline-primary mt-3 mx-3">Go Back</a>
+    <div>
+        <div>
+            <h1>Product Dimensions</h1>
+
+            <form method= "POST">
+                {% csrf_token %} 
+                {{form.as_p}}  
+
+                <button type= "submit">Calculate</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+

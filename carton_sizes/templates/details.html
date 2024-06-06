@@ -1,0 +1,18 @@
+{% extends "master.html" %}
+
+{% block title %}
+    <title>{{ mycarton.codename }}</title>
+{% endblock %}
+
+{% block content %}
+<h1>{{mycarton.codename }}</h1>
+  
+<p>Material: {{ mycarton.material }}</p>
+<p>Thickness: {{ mycarton.thickness }} mm</p>
+<p>Folding Type: {{ mycarton.folding_type }}</p>
+
+<hr>
+
+<p>Back to <a href="/carton_sizes">Carton Sizes</a></p>
+
+{% endblock %}

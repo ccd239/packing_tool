@@ -1,0 +1,16 @@
+{% extends "master.html" %}
+
+{% block title %}
+  My packing tool - start by adding the Carton Sizes
+{% endblock %}
+
+{% block content %}
+<a href="{% url 'main' %}" class="btn btn-outline-primary mt-3 mx-3">Go Back</a>
+<h1>Carton Sizes</h1>
+
+<ul>
+  {% for x in mycartons %}
+    <li><a href="details/{{ x.id }}">{{ x.codename }} {{ x.length }} {{ x.width }} {{ x.height }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}
